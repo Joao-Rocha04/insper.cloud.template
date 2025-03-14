@@ -8,14 +8,14 @@
 
 ## KIT-P
 
-João da Silva
+João Vitor Rocha
 
-Pedro de Souza
+Marinna Grigolli Cesar
 
 
 ## Entregas
 
-- [x] Roteiro 1 - Data 23/02/2025
+- [x] Roteiro 1 - Data 14/03/2025
 - [ ] Roteiro 2
 - [ ] Roteiro 3
 - [ ] Roteiro 4
