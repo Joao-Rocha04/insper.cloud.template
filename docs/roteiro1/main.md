@@ -1,6 +1,8 @@
 ## Objetivo
 
 Aqui vai o objetivo macro do roteiro. Por que estamos fazendo o que estamos fazendo?
+- Realizar uma experiência prática na configuração e gerenciamento de uma infraestrutura de nuvem bare-metal utilizando o MaaS (Metal as a Service)
+- Aprender sobre conceitos básicos de rede de computadores 
 
 ## Montagem do Roteiro
 
