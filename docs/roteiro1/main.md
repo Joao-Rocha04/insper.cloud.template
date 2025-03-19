@@ -8,9 +8,9 @@ Aqui vai o objetivo macro do roteiro. Por que estamos fazendo o que estamos faze
 
 Os pontos "tarefas" são os passos que devem ser seguidos para a realização do roteiro. Eles devem ser claros e objetivos. Com evidências claras de que foram realizados.
 
-### Tarefa 1
+### MAAS
 
-Instalando o MAAS:
+#### Instalando o MAAS:
 
 <!-- termynal -->
 
@@ -24,6 +24,22 @@ Dashboard do MAAS
 ///
 
 Conforme ilustrado acima, a tela inicial do MAAS apresenta um dashboard com informações sobre o estado atual dos servidores gerenciados. O dashboard é composto por diversos painéis, cada um exibindo informações sobre um aspecto específico do ambiente gerenciado. Os painéis podem ser configurados e personalizados de acordo com as necessidades do usuário.
+
+#### Configurando o MAAS
+
+Primeiramente, foi inicializado o MAAS e criado o usuário para o todo o uso futuro, após isso, foi-se criado um par de chaves para autenticação SSH. 
+Agora podemos configurar um DNS Forwarder com o DNS do Insper para que podemos usar este DNS para nosso roteador acessar.
+Importamos as imagens do Ubuntu para o uso futuro em nossas máquinas, utilizamos das versões Ubuntu 22.04LTS e Ubuntu 20.04 LTS.
+Foi feito do upload da chave copiada anteriormente no terminal SSH do MAAS.
+
+#### Chaveando o DHCP
+
+É necessário habilitar o DHCP na subrede do MAAS, para que ele faça a distribuição dos Ip's nas nossas máquinas, foi necessário alterar o **Reserved Range** para **iniciar** em 172.16.11.1 e **acabar** em 172.16.14.255 assim, garantimos que o MAAS não distribua Ip's em uma faixa que já esteja sendo usada pela rede.
+
+
+### Tarefa 1
+
+
 
 ### Tarefa 2
 
