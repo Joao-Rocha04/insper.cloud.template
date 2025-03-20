@@ -1,10 +1,11 @@
 ## Objetivo
 
-Aqui vai o objetivo macro do roteiro. Por que estamos fazendo o que estamos fazendo?
 - Realizar uma experiência prática na configuração e gerenciamento de uma infraestrutura de nuvem bare-metal utilizando o MaaS (Metal as a Service)
+
+
 - Aprender sobre conceitos básicos de rede de computadores 
 
-## Montagem do Roteiro
+## Infra
 
 Os pontos "tarefas" são os passos que devem ser seguidos para a realização do roteiro. Eles devem ser claros e objetivos. Com evidências claras de que foram realizados.
 
@@ -35,16 +36,22 @@ Foi feito do upload da chave copiada anteriormente no terminal SSH do MAAS.
 #### Chaveando o DHCP
 
 É necessário habilitar o DHCP na subrede do MAAS, para que ele faça a distribuição dos Ip's nas nossas máquinas, foi necessário alterar o **Reserved Range** para **iniciar** em 172.16.11.1 e **acabar** em 172.16.14.255 assim, garantimos que o MAAS não distribua Ip's em uma faixa que já esteja sendo usada pela rede.
+Também, foi necessário desabilitar o DHCP que o roteador estava nos fornecendo.
 
 
-### Tarefa 1
+#### Comissionamento 
+
+Com o MasAddress de cada máquina, fizemos o comissionamento da máquina main, roteador e outros 4 servers, esse comissionamento é feito de form automática realizando o boot via PXE na rede. Após verificar se as espefificações de máquina estavam de acordo, seguimos com os próximos passos.
+
+### Acesso Remoto
+
+O acesso remoto é uma parte essencial para a realização do projeto, visto que, sem ele, seria necessário estar fisicamente presente no laboratório e conectar-se diretamente ao servidor por meio de um cabo de rede. Para possibilitar a conexão externa a partir da rede Wi-Fi do Insper, foi configurado um Network Address Translation (NAT) no roteador do kit, permitindo o redirecionamento de requisições externas para a porta 22 (SSH) do servidor principal, denominado MAIN.
 
 
-
-### Tarefa 2
+Dessa forma, com a configuração do NAT e a liberação do gerenciamento remoto, foi possível acessar o servidor MAIN externamente, porém com a necessidade de estar conectado na rede do Insper, assim, garantindo maior flexibilidade no desenvolvimento e na execução do projeto.
 
 ## App
-
+### Django em Nuvem
 
 
 ### Tarefa 1
