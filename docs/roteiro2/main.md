@@ -156,18 +156,18 @@ Essa etapa confirmou que a comunicação entre os serviços estava correta e que
 
 
 ## Tarefa 1.1
-![alt text](imagens/Tarefa1_1.png)
+![T1](imagens/Tarefa1_1.png)
 
 ## Tarefa 1.2
-![alt text](imagens/Tarefa1_2.png)
+![T2](imagens/Tarefa1_2.png)
 
 ## Tarefa 1.3
-![alt text](imagens/tarefa1_3.png)
+![T3](imagens/tarefa1_3.png)
 
 ## Tarefa 1.4
-![alt text](imagens/Tarefa1_4.png)
+![T4](imagens/Tarefa1_4.png)
 
 ## Tarefa 1.5
-![alt text](imagens/Tarefa1_5.png)
+![T5](imagens/Tarefa1_5.png)
 
 ---
