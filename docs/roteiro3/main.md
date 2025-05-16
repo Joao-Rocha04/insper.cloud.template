@@ -109,3 +109,68 @@ Neutron API, Central, Chassis e plugin OVN estruturam as redes flat e overlay, r
 
 ### Dashboard (Horizon)
 Consome Keystone para login e MySQL para dados administrativos.
+
+
+## **SetUp**
+
+### 1. Autenticação com Keystone
+
+* Carregamos o arquivo de credenciais (openrc) em nosso terminal de administração, para assegurar que todos os sentimentos dos serviços (Nova, Cinder, Neutron) seriam invocados com privilégios corretos e para garantir segurança e rastreabilidade das ações.
+
+### 2. Verificação Inicial na Interface Horizon
+
+* Acessamos o painel Horizon como administradores e navegamos pelas seções principais: Compute, Instâncias e Network Topology, para obter uma visão geral do estado atual do ambiente — máquinas provisionadas pelo MaaS e unidades do Juju.
+
+### 3. Preparação de Imagens e Flavors
+
+* Importamos a imagem base do Ubuntu Jammy e criamos quatro perfis de instância (flavors) com diferentes combinações de CPU, memória e disco, isso nos permitiu padronizar os tipos de VMs que seriam instanciadas posteriormente.
+
+### 4. Configuração da Rede Externa
+
+* Definimos uma rede externa e alocamos um pool de endereços na faixa pré-estabelecida (172.16.7.0–172.16.8.255), para conectar as VMs à rede física e possibilitar comunicação com o mundo externo, mantendo o controle de escopo do tráfego de saída.
+
+### 5. Montagem da Rede Interna e Roteador Virtual
+
+* Criamos uma rede privada isolada (192.169.0.0/24) e associamos um roteador virtual que faz o link entre essa rede interna e a externa, para segmentar o tráfego interno das instâncias, garantindo isolamento e flexibilidade de roteamento.
+
+### 6. Importação de Chave SSH e Regras de Segurança
+
+* Carregamos nosso par de chaves SSH (id_rsa.pub) para permitir acessos sem senha e ajustamos o grupo de segurança padrão para autorizar SSH e ICMP. Como o nome do nosso par de chave é padrão utilizamos o comando: 
+    ssh ubuntu@172.16.8.31 
+Sendo o IP utilizado o nosso Floating IP.
+
+### 7. Teste de Criação de Instância
+
+* Subimos uma VM do tipo m1.tiny chamada `client`, associamos um IP flutuante e validamos acesso SSH desde nossa máquina local, para confirmar que todas as configurações anteriores (imagens, flavors, redes, segurança) estavam corretas e funcionais.
+
+
+### 8. Escalabilidade dos Nós de Computação e Armazenamento
+
+* Adicionamos unidades de compute e de block storage ao cluster via Juju (nova-compute e ceph-osd) em máquinas reservadas no MaaS, para demonstrar a escalabilidade horizontal do ambiente, aumentando capacidade de processamento e balanceamento de carga.
+
+#### Exemplo de Diagrama (Mermaid)
+
+```mermaid
+flowchart TB
+  subgraph Campus["Campus Insper"]
+    Internet["Internet / Campus Network"]
+    MaaS["MaaS Controller"]
+    Juju["Juju Controller"]
+  end
+
+  subgraph OpenStack["OpenStack"]
+    Ext["Rede Ext. (172.16.7.0/24)"]
+    Rtr["Virtual Router"]
+    Int["Rede Int. (192.169.0.0/24)"]
+    VM["VM: client (m1.tiny)
+Priv: 192.169.0.5"]
+  end
+
+  Internet --> Ext
+  Ext --> Rtr
+  Rtr --> Int
+  Int --> VM
+  VM -->|Floating: 172.16.8.31| Ext
+```
+
+---
