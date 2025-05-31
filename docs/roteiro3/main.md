@@ -117,6 +117,29 @@ Consome Keystone para login e MySQL para dados administrativos.
 
 * Carregamos o arquivo de credenciais (openrc) em nosso terminal de administração, para assegurar que todos os sentimentos dos serviços (Nova, Cinder, Neutron) seriam invocados com privilégios corretos e para garantir segurança e rastreabilidade das ações.
 
+
+#### Tarefa 1.1
+
+![Status do Juju Controller](../imgs/juju_status.png)
+
+#### Tarefa 1.2
+
+
+#### Tarefa 1.3
+
+![Aba Compute Overview](./Figuras/overvi.png)
+
+
+#### Tarefa 1.4
+
+![Instâncias no OpenStack](./Figuras/instan.png)
+
+
+#### Tarefa 1.5
+
+![Topologia de Rede](./Figuras/network_topo.png)
+
+
 ### 2. Verificação Inicial na Interface Horizon
 
 * Acessamos o painel Horizon como administradores e navegamos pelas seções principais: Compute, Instâncias e Network Topology, para obter uma visão geral do estado atual do ambiente — máquinas provisionadas pelo MaaS e unidades do Juju.
@@ -142,6 +165,43 @@ Sendo o IP utilizado o nosso Floating IP.
 ### 7. Teste de Criação de Instância
 
 * Subimos uma VM do tipo m1.tiny chamada `client`, associamos um IP flutuante e validamos acesso SSH desde nossa máquina local, para confirmar que todas as configurações anteriores (imagens, flavors, redes, segurança) estavam corretas e funcionais.
+
+
+
+#### Tarefa 1.1
+
+![Novo Maas](./Figuras/novo_maas.png)
+
+
+#### Tarefa 1.2
+
+![Aba Compute Overview](./Figuras/novo_over.png)
+
+
+#### Tarefa 1.3
+
+![Instâncias no OpenStack](./Figuras/novo_inst.png)
+
+
+#### Tarefa 1.4
+
+![Topologia de Rede](./Figuras/novo_topo.png)
+
+
+#### Tarefa 2.1
+
+- **Instâncias:** inexistentes na Tarefa 1 × instância “client” rodando na Tarefa 2.
+
+- **Limite de recursos (Overview):** todos zerados na Tarefa 1 × uso de instância, rede, porta e roteador em Tarefa 2.
+
+- **Topologia de rede:** nenhuma rede ou roteador na Tarefa 1 × redes (ext_net, user1_net), roteador (user1_router) e instância conectada em Tarefa 2.
+
+
+#### Tarefa 3.1
+
+Explicado em cada etapa mostrada acima.
+                                       
+
 
 
 ### 8. Escalabilidade dos Nós de Computação e Armazenamento
@@ -174,3 +234,48 @@ Priv: 192.169.0.5"]
 ```
 
 ---
+## **App**
+
+Nesta etapa alocamos uma API construida pelo FastApi em nosso projeto, foi dividido desta maneira: 
+
+- 2 instâncias com a API do projeto, etapa 1
+- 1 instância com banco de dados, etapa 1, e
+- 1 instância com LoadBalancer, Nginx.
+
+
+
+### Tarefa 4
+
+A seguir temos nossa visualização da API criada, além das abas network topology, demosntrando a estrutura de rede, e cada uma de nossas máquinas, com seus IP's flutuantes e flavors
+
+
+#### Dashboard API
+
+![Dashboard API](./Figuras/dashboard_api.jpeg)
+
+
+#### Network Topology
+
+![Network Topology](./Figuras/topology_api.jpeg)
+
+
+
+#### App 1
+
+![App 1](./Figuras/app1.jpeg)
+
+
+#### App 2
+
+![App 2](./Figuras/app2.jpeg)
+
+
+
+#### Nginx
+
+![Nginx](./Figuras/nginx.jpeg)
+
+
+#### Banco de dados
+
+![Banco de dados](./Figuras/banco_dados.jpeg)
