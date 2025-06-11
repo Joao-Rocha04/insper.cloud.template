@@ -81,22 +81,22 @@ sudo ufw allow 5432/tcp
 3. Acessivel a partir de uma conexão vinda da máquina MAIN.
 4. Em qual porta este serviço está funcionando.
 
-![Banco como Ativo](./imagens/Tarefa1_1.png)
+![Banco como Ativo](./Imagens/Tarefa1_1.png)
 /// caption
 Banco como Ativo
 ///
 
-![Acessivel na própria maquina](./imagens/Task1_2.png)
+![Acessivel na própria maquina](./Imagens/Task1_2.png)
 /// caption
 Acessivel na própria maquina
 ///
 
-![Acessivel da main](./imagens/Task1_3.png)
+![Acessivel da main](./Imagens/Task1_3.png)
 /// caption
 Acessivel da MAIN
 ///
 
-![Porta que esta funcionando](./imagens/Task1_4.png)
+![Porta que esta funcionando](./Imagens/Task1_4.png)
 /// caption
 Porta que está rodando o serviço
 ///
@@ -121,37 +121,37 @@ ssh cloud@10.103.0.X -L 8001:[IP server2]:8080
 2. Da aba images, com as imagens sincronizadas.
 3. Da Aba de cada maquina(5x) mostrando os testes de hardware e commissioning com Status "OK"
 
-![Dashboard](./imagens/Tarefa2_1.png)
+![Dashboard](./Imagens/Tarefa2_1.png)
 /// caption
 Dashboard do MAAS
 ///
 
-![Aba images](./imagens/Tarefa2_2.png)
+![Aba images](./Imagens/Tarefa2_2.png)
 /// caption
 Aba images
 ///
 
-![Aba das máquinas](./imagens/Tarefa2_3_server1_comi.png)
+![Aba das máquinas](./Imagens/Tarefa2_3_server1_comi.png)
 /// caption
 Máquina 1
 ///
 
-![Aba das máquinas](./imagens/Tarefa2_3_server2_comi.png)
+![Aba das máquinas](./Imagens/Tarefa2_3_server2_comi.png)
 /// caption
 Máquina 2
 ///
 
-![Aba das máquinas](./imagens/Tarefa2_3_server3_comi.png)
+![Aba das máquinas](./Imagens/Tarefa2_3_server3_comi.png)
 /// caption
 Máquina 3
 ///
 
-![Aba das máquinas](./imagens/Tarefa2_3_server4_comi.png)
+![Aba das máquinas](./Imagens/Tarefa2_3_server4_comi.png)
 /// caption
 Máquina 4
 ///
 
-![Aba das máquinas](./imagens/Tarefa2_3_server5_comi.png)
+![Aba das máquinas](./Imagens/Tarefa2_3_server5_comi.png)
 /// caption
 Máquina 5
 ///
@@ -164,12 +164,12 @@ Máquina 5
 2. De um print da aplicacao Django, provando que voce está conectado ao server
 3. Explique como foi feita a implementacao manual da aplicacao Django e banco de dados.
 
-![Dashboard do MAAS](./imagens/Tarefa3_1.jpeg)
+![Dashboard do MAAS](./Imagens/Tarefa3_1.jpeg)
 /// caption
 Dashboard do MAAS com as 2 Maquinas e seus respectivos IPs
 ///
 
-![Aplicação Django](./imagens/Tarefa3_2Server2Etarefa4_2.jpeg)
+![Aplicação Django](./Imagens/Tarefa3_2Server2Etarefa4_2.jpeg)
 /// caption
 Aplicação Django
 ///
@@ -187,17 +187,17 @@ Agora passamos a utilizar duas instâncias da aplicação Django (server2 e serv
 3. De um print da aplicacao Django, provando que voce está conectado ao server3 
 4. Explique qual diferenca entre instalar manualmente a aplicacao Django e utilizando o Ansible.
 
-![Dashboard MAAS](./imagens/Tarefa4_1.png)
+![Dashboard MAAS](./Imagens/Tarefa4_1.png)
 /// caption
 Dashboard MAAS
 ///
 
-![Aplicação Django conectado no server2](./imagens/Tarefa3_2Server2Etarefa4_2.jpeg)
+![Aplicação Django conectado no server2](./Imagens/Tarefa3_2Server2Etarefa4_2.jpeg)
 /// caption
 Aplicação Django conectado no server2
 ///
 
-![Aplicação Django conectado no server3](./imagens/Tarefa4_3Server4.jpeg)
+![Aplicação Django conectado no server3](./Imagens/Tarefa4_3Server4.jpeg)
 /// caption
 Aplicação Django conectado no server3
 ///
@@ -226,18 +226,18 @@ Essa arquitetura centraliza o acesso e torna o sistema mais robusto, escalável 
 2. Altere o conteúdo da mensagem contida na função `index` do arquivo `tasks/views.py` de cada server para distinguir ambos os servers. 
 3. Faça um `GET request` para o path que voce criou em urls.py para o Nginx e tire 2 prints das respostas de cada request, provando que voce está conectado ao server 4, que é o Proxy Reverso e que ele bate cada vez em um server diferente server2 e server3.
 
-![Dashboard MAAS](./imagens/Tarefa5_1.png)
+![Dashboard MAAS](./Imagens/Tarefa5_1.png)
 /// caption
 Dashboard MAAS
 ///
 
 
-![Dashboard MAAS](./imagens/Tarefa5_server2.png)
+![Dashboard MAAS](./Imagens/Tarefa5_server2.png)
 /// caption
 Mensagem alterada acessada pelo server2
 ///
 
-![Dashboard MAAS](./imagens/Tarefa5_server4.png)
+![Dashboard MAAS](./Imagens/Tarefa5_server4.png)
 /// caption
 Mensagem alterada acessada pelo server4
 ///
